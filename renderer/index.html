@@ -239,6 +239,7 @@
   </div>
 
   <script src="../vendor/js-yaml.min.js"></script>
+  <script>const yaml = jsyaml;</script>
   <script>
     marked.use({ renderer: { link({ href, title, text }) { return `<a href="${href}" title="${title || ''}" target="_blank" rel="noopener">${text}</a>`; } } });
     
