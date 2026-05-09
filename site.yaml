@@ -11,33 +11,22 @@ site:
   font: "./renderer/assets/font.woff2"
 
   profile:
-    title: "Yumeka の 主页"
-    avatar: "./assets/avatar.jpg"
+    title: "desuwa.org"
+    avatar: "./assets/avatar.jpg?v2"
     aliases:
-      - label: "@KlxPiao"
-        tooltip: "不重复的平台ID: KlxPiao"
-        copy: "KlxPiao"
-      - label: "/ miniyu157"
-        tooltip: "远古的ID: miniyu157"
-        copy: "miniyu157"
-      - label: "/ YMKxxxxxxxx"
+      - label: "@Epheia"
+        tooltip: "你好~ 我是Epheia"
+        copy: "Epheia"
+      - label: "/ @Epheiamoe"
+        tooltip: "Github的ID: miniyu157"
+        copy: "Epheiamoe"
+      - label: "/ nyaepheia"
         tooltip: "X(Twitter)的ID: YMKxxxxxxxx"
-        copy: "YMKxxxxxxxx"
+        copy: "nyaepheia"
 
   about:
     heading: "关于我"
-    traits:
-      - icon: "fa-solid fa-user"
-        tooltip: "86% 内向"
-      - icon: "fa-solid fa-brain"
-        tooltip: "69% 天马行空"
-      - icon: "fa-solid fa-heart"
-        tooltip: "82% 情感细腻"
-      - icon: "fa-solid fa-dice"
-        tooltip: "63% 随机应变"
-      - icon: "fa-solid fa-star"
-        tooltip: "83% 自信果断"
-    bio: "你好～ 这里是 Yumeka，也可以叫我<span class='font-semibold text-purple-400'>梦花</span>，是一个热爱编程与 ACG 的普通大学生。向往纯粹的浪漫与唯美，<span class='font-semibold text-pink-400'>喜欢和善良的人交朋友。</span>"
+    bio: "你好～ 这里是 Epheia，也可以叫我<span class='font-semibold text-purple-400'>依菲雅</span>，<span class='font-semibold text-pink-400'>喜欢和善良的人交朋友。</span>"
     tags:
       - text: "ArchLinux"
         copy: "ArchLinux"
@@ -53,9 +42,9 @@ site:
   portals:
     heading: "传送门"
     items:
-      - title: "Yumeka 的小窝"
+      - title: "本小姐的博客"
         desc: "似乎什么都没有, 会分享些什么呢?"
-        url: "https://sudo.yumeka.blog/"
+        url: "https://watakushi.desuwa.org/"
         icon: "fa-solid fa-house-chimney"
       - title: "LGBTQIA+ 骄傲旗帜"
         desc: "一个为爱制作的小工具"
@@ -74,17 +63,13 @@ site:
     heading: "找到我"
     links:
       - icon: "fa-brands fa-github"
-        url: "https://github.com/miniyu157"
+        url: "https://github.com/epheiamoe"
         isCopy: false
-      - icon: "fa-brands fa-qq"
-        val: "1979287894"
-        isCopy: true
-        msg: "QQ 号码"
       - icon: "fa-solid fa-envelope"
-        url: "mailto:yumeka.love9@gmail.com"
+        url: "mailto:c@desuwa.org"
         isCopy: false
 
-  footer: "&copy; 2025-2026 Yumeka <a href='mailto:miniyu157@163.com' class='hover:text-purple-400 transition-colors duration-300'>&ltminiyu157@163.com&gt</a>. Released under the MIT License."
+  footer: "© 2025-2026 Epheia. 本页基于 <a href='https://github.com/miniyu157/home' class='hover:text-purple-400 transition-colors duration-300'>Yumeka 的开源项目</a> 改编，遵循 MIT 协议。"
 
 # ---------------------------------------------------------------------------
 # 旗帜生成器 (flag/index.html) 配置

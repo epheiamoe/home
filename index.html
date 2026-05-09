@@ -173,14 +173,14 @@
             const portalIconColors = ['text-indigo-300', 'text-pink-300', 'text-sky-300', 'text-emerald-300'];
             const linkHover = ['hover:text-slate-800', 'hover:text-blue-500', 'hover:text-red-500'];
 
-            const aliasesHTML = data.profile.aliases.map(alias =>
+            const aliasesHTML = (data.profile.aliases || []).map(alias =>
                 `<span class="tooltip" onclick="handleCopy('${alias.copy}', 'ID')">
                     ${alias.label}
                     <span class="tooltip-text">${alias.tooltip}</span>
                 </span>`
             ).join('');
 
-            const traitsHTML = data.about.traits.map((trait, i) =>
+            const traitsHTML = (data.about.traits || []).map((trait, i) =>
                 `<div class="tooltip">
                     <div class="w-6 h-6 rounded-full ${traitColors[i]} flex items-center justify-center text-white text-[10px] font-bold shadow-sm">
                         <i class="${trait.icon}"></i>
@@ -189,13 +189,13 @@
                 </div>`
             ).join('');
 
-            const tagsHTML = data.about.tags.map((tag, i) =>
+            const tagsHTML = (data.about.tags || []).map((tag, i) =>
                 `<span onclick="handleCopy('${tag.copy}', '标签')" class="${tagStyles[i]} px-3.5 py-1.5 rounded-full font-medium cursor-pointer transition-transform active:scale-95 shadow-sm text-xs tracking-wide">
                     ${tag.text}
                 </span>`
             ).join('');
 
-            const portalsHTML = data.portals.items.map((item, i) =>
+            const portalsHTML = (data.portals.items || []).map((item, i) =>
                 `<a href="${item.url}" target="_blank" class="group block ${portalBgs[i]} p-5 rounded-2xl border border-white/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.08)] active:scale-[0.98]">
                     <div class="flex items-start justify-between">
                         <div>
@@ -207,7 +207,7 @@
                 </a>`
             ).join('');
 
-            const contactHTML = data.contact.links.map((link, i) =>
+            const contactHTML = (data.contact.links || []).map((link, i) =>
                 link.isCopy
                     ? `<a onclick="handleCopy('${link.val}', '${link.msg || '内容'}')" class="text-slate-400 ${linkHover[i]} transition-colors duration-300 cursor-pointer p-2"><i class="${link.icon}"></i></a>`
                     : `<a href="${link.url}" target="_blank" class="text-slate-400 ${linkHover[i]} transition-colors duration-300 p-2"><i class="${link.icon}"></i></a>`
@@ -233,7 +233,7 @@
                             <h2 class="text-lg font-bold text-slate-700 flex items-center gap-2.5">
                                 <i class="fa-solid fa-address-card text-purple-400"></i>${data.about.heading}
                             </h2>
-                            <div class="flex items-center gap-1.5 sm:gap-2">${traitsHTML}</div>
+                            ${traitsHTML ? `<div class="flex items-center gap-1.5 sm:gap-2">${traitsHTML}</div>` : ''}
                         </div>
                         <p class="text-sm sm:text-[15px] leading-loose text-slate-600 tracking-wide">${data.about.bio}</p>
                         <div class="flex flex-wrap gap-2.5 select-none pt-2">${tagsHTML}</div>
