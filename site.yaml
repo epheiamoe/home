@@ -21,23 +21,17 @@ site:
         tooltip: "Github的ID: miniyu157"
         copy: "Epheiamoe"
       - label: "/ nyaepheia"
-        tooltip: "X(Twitter)的ID: YMKxxxxxxxx"
+        tooltip: "X(Twitter)的ID: nyaepheia"
         copy: "nyaepheia"
 
   about:
     heading: "关于我"
     bio: "你好～ 这里是 Epheia，也可以叫我<span class='font-semibold text-purple-400'>依菲雅</span>，<span class='font-semibold text-pink-400'>喜欢和善良的人交朋友。</span>"
     tags:
-      - text: "ArchLinux"
-        copy: "ArchLinux"
-      - text: "i7-9750HF"
-        copy: "i7-9750HF"
-      - text: "GTX 1650"
-        copy: "GTX 1650"
-      - text: "INFP-A"
-        copy: "INFP-A"
-      - text: "🎂 12-08"
-        copy: "12-08"
+      - text: "mtf/x"
+        copy: "mtf/x"
+      - text: "🎂 5-12"
+        copy: "5-12"
 
   portals:
     heading: "传送门"
@@ -50,6 +44,18 @@ site:
         desc: "一个为爱制作的小工具"
         url: "./flag/"
         icon: "fa-solid fa-rainbow"
+      - title: "AI bsky"
+        desc: "你的 Bluesky，AI 加持。"
+        url: "https://ai-bsky.pages.dev"
+        icon: "fa-solid fa-terminal"
+      - title: "2345.desuwa.org"
+        desc: "跨性别资源搜索引擎"
+        url: "https://2345.desuwa.org"
+        icon: "fa-solid fa-magnifying-glass"
+      - title: "Moe Translate"
+        desc: "LLM 驱动的翻译PWA app"
+        url: "https://translate.epheia.moe"
+        icon: "fa-solid fa-language"
       - title: "\u201C\U0001F630不出来\u201D表情包生成器"
         desc: "没什么用的小玩意"
         url: "./meme/"
@@ -58,6 +64,7 @@ site:
         desc: "自用的小东西"
         url: "./renderer/"
         icon: "fa-solid fa-layer-group"
+
 
   contact:
     heading: "找到我"
