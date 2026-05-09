@@ -238,6 +238,7 @@
     </div>
   </div>
 
+  <script src="../vendor/js-yaml.min.js"></script>
   <script>
     marked.use({ renderer: { link({ href, title, text }) { return `<a href="${href}" title="${title || ''}" target="_blank" rel="noopener">${text}</a>`; } } });
     
@@ -254,12 +255,7 @@
       btnHelpConfirm: document.getElementById('btnHelpConfirm')
     };
 
-    const SettingsSchema = [
-      { key: '--font-size', label: '全局字号大小', type: 'number', def: 16, min: 12, max: 32, step: 1, unit: 'px' },
-      { key: '--line-height', label: '正文行高', type: 'number', def: 1.6, min: 1.0, max: 3.0, step: 0.1, unit: '' },
-      { key: '--code-line-height', label: '代码块行高', type: 'number', def: 1.4, min: 1.0, max: 3.0, step: 0.1, unit: '' },
-      { key: '--font-family', label: '字体族或路径 (支持 https http)', type: 'string', def: './assets/font.woff2', placeholder: './assets/font.woff2' }
-    ];
+    let SettingsSchema = [];
 
     const Workspace = {
       files: [],
@@ -502,8 +498,19 @@
       });
     };
 
-    bindEvents();
-    if (window.innerWidth <= 840) DOM.sidebar.classList.remove('is-active');
+    (async () => {
+      try {
+        const res = await fetch('../site.yaml');
+        if (!res.ok) throw new Error(`HTTP ${res.status}: 无法加载配置文件`);
+        const raw = await res.text();
+        const config = yaml.load(raw);
+        SettingsSchema = config.renderer.settingsSchema;
+      } catch (err) {
+        console.error('配置加载失败:', err);
+      }
+      bindEvents();
+      if (window.innerWidth <= 840) DOM.sidebar.classList.remove('is-active');
+    })();
   </script>
 </body>
 </html>
