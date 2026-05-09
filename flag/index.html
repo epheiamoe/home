@@ -693,7 +693,7 @@
         // 页面加载完成后执行初始化操作（异步加载 YAML 配置）
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                const res = await fetch('../site.yaml');
+                const res = await fetch('../flag.yaml');
                 if (!res.ok) throw new Error(`HTTP ${res.status}: 无法加载配置文件`);
                 const raw = await res.text();
                 const config = yaml.load(raw);

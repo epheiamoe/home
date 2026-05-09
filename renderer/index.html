@@ -501,7 +501,7 @@
 
     (async () => {
       try {
-        const res = await fetch('../site.yaml');
+        const res = await fetch('../chat.yaml');
         if (!res.ok) throw new Error(`HTTP ${res.status}: 无法加载配置文件`);
         const raw = await res.text();
         const config = yaml.load(raw);
